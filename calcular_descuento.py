@@ -1,22 +1,35 @@
-# Definimos la función calcular_descuento
-def calcular_descuento(monto_total, porcentaje_descuento=25):
-    descuento = (monto_total * porcentaje_descuento) / 100
+# Función para calcular el descuento
+def calcular_descuento(monto_total, porcentaje_descuento=10):
+    """
+    Calcula el descuento aplicando un porcentaje sobre el monto total.
+
+    :param monto_total: Monto total de la compra.
+    :param porcentaje_descuento: Porcentaje de descuento, por defecto es 10%.
+    :return: Monto del descuento.
+    """
+    descuento = monto_total * (porcentaje_descuento / 100)
     return descuento
 
-# Programa principal
-monto1 = 400.0
-monto2 = 800.0
-monto3 = 200.0
-monto4 = 350.0
-porcentaje_descuento2 = 20
-porcentaje_descuento4 = 25
+# Interacción personalizada con Juana, Isabel y Lia
+def main():
+    # Interacción con Juana (descuento del 25%)
+    monto_juana = 120.0
+    descuento_juana = calcular_descuento(monto_juana, 25)
+    monto_final_juana = monto_juana - descuento_juana
+    print(f"Juana: Monto de la compra: ${monto_juana}, Descuento aplicado: ${descuento_juana}, Monto final: ${monto_final_juana}")
 
-# Llamadas a la función
-descuento1 = calcular_descuento(monto1)
-descuento2 = calcular_descuento(monto2, porcentaje_descuento2)
-descuento3 = calcular_descuento(monto3, porcentaje_descuento4)
+    # Interacción con Isabel (descuento del 50%)
+    monto_isabel = 250.0
+    descuento_isabel = calcular_descuento(monto_isabel, 50)
+    monto_final_isabel = monto_isabel - descuento_isabel
+    print(f"Isabel: Monto de la compra: ${monto_isabel}, Descuento aplicado: ${descuento_isabel}, Monto final: ${monto_final_isabel}")
 
-# Mostrar los resultados
-print(f"Compra 1: Monto Total = {monto1}, Descuento = {descuento1}, Monto Final = {monto1 - descuento1}")
-print(f"Compra 2: Monto Total = {monto2}, Descuento = {descuento2}, Monto Final = {monto2 - descuento2}")
-print(f"Compra 3: Monto Total = {monto3}, Descuento = {descuento3}, Monto Final = {monto3 - descuento3}")
+    # Interacción con Lia (descuento del 15%)
+    monto_lia = 300.0
+    descuento_lia = calcular_descuento(monto_lia, 15)
+    monto_final_lia = monto_lia - descuento_lia
+    print(f"Lia: Monto de la compra: ${monto_lia}, Descuento aplicado: ${descuento_lia}, Monto final: ${monto_final_lia}")
+
+# Llamada a la función principal
+if __name__ == "__main__":
+    main()
