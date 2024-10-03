@@ -1,0 +1,27 @@
+# Creando un archivo de notas utilizando write() y luego leyendo con readline(): my_five_notes_alternate.txt
+five_file_alt_path = "my_five_notes_alternate.txt"  # Ruta del archivo
+
+# Abriendo el archivo en modo de escritura
+file_alt = open(five_file_alt_path, 'w')
+
+# Escribiendo cinco líneas de notas personales utilizando write()
+file_alt.write("Nota 1: Revisar las nuevas políticas de recursos humanos.\n")
+file_alt.write("Nota 2: Actualizar los datos financieros del trimestre anterior.\n")
+file_alt.write("Nota 3: Programar una reunión para revisar los objetivos del equipo.\n")
+file_alt.write("Nota 4: Enviar recordatorios de tareas pendientes al equipo de ventas.\n")
+file_alt.write("Nota 5: Evaluar la necesidad de una nueva campaña de marketing.\n")
+
+# Cerrando el archivo tras escribir
+file_alt.close()
+
+# Abriendo el archivo en modo de lectura
+file_alt = open(five_file_alt_path, 'r')
+
+# Leyendo el contenido del archivo línea por línea usando readline() y mostrando en consola
+line = file_alt.readline()  # Usando readline() para leer una línea a la vez
+while line:
+    print(line.strip())  # Mostrando cada línea sin saltos de línea adicionales
+    line = file_alt.readline()  # Continuar leyendo la siguiente línea
+
+# Cerrando el archivo tras la lectura
+file_alt.close()
